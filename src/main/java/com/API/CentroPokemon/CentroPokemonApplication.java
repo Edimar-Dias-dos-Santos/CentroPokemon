@@ -10,4 +10,6 @@ public class CentroPokemonApplication {
 		SpringApplication.run(CentroPokemonApplication.class, args);
 	}
 
+	//teste
+
 }
