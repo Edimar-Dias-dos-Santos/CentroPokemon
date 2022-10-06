@@ -17,7 +17,6 @@ import java.util.Objects;
 @RequestMapping("api/treinador")
 @CrossOrigin("*")
 @AllArgsConstructor
-
 public class TreinadorController {
     private TreinadorService treinadorService;
 
