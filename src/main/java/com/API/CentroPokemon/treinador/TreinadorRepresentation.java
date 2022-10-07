@@ -56,15 +56,19 @@ public interface TreinadorRepresentation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     class Lista {
         private Long id;
-        private String nomeCompleto;
+        private String nomeTreinador;
+        private String rgTreinador;
+        //private String nomeCompleto;
 
         private static Lista from(Treinador treinador) {
             //return treinador.getPokemonList().isEmpty() ?
            return Lista.builder()
                     .id(treinador.getIdTreinador())
-                    .nomeCompleto(
-                            String.format("%s %s", treinador.getNomeTreinador(), treinador.getRgTreinador())
-                    )
+                    .nomeTreinador(treinador.getNomeTreinador())
+                    .rgTreinador(treinador.getRgTreinador())
+//                    .nomeCompleto(
+//                            String.format("%s %s", treinador.getNomeTreinador(), treinador.getRgTreinador())
+//                    )
                     .build();
 
         }
