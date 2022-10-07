@@ -45,9 +45,9 @@ public class TreinadorService {
                 .build());
     }
 
-    public Page<Treinador> buscarTodos(org.springframework.cglib.core.Predicate filtroURI, Pageable pageable) {
-        return this.treinadorRepository.findAll(pageable);
 
+    public Page<Treinador> buscarTodos(Pageable pageable) {
+        return this.treinadorRepository.findAll(pageable);
     }
 
     public Page<Treinador> buscarTodos(Predicate filtroURI, Pageable pageable) {
@@ -88,6 +88,7 @@ public class TreinadorService {
             throw new NotFoundException("Treinador não encontrado");
         }
     }
+
 
 }
 

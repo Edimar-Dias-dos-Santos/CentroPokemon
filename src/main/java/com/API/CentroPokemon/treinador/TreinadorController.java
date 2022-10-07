@@ -1,7 +1,7 @@
 package com.API.CentroPokemon.treinador;
 
+import com.querydsl.core.types.Predicate;
 import lombok.AllArgsConstructor;
-import org.springframework.cglib.core.Predicate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -44,7 +44,7 @@ public class TreinadorController {
         Pageable pageable = PageRequest.of(paginaSelecionada, tamanhoPagina);
 
         Page<Treinador> treinadorList = Objects.isNull(filtroURI) ?
-                this.treinadorService.buscarTodos(filtroURI, pageable) :
+                this.treinadorService.buscarTodos(pageable) :
                 this.treinadorService.buscarTodos(filtroURI, pageable);
 
         List<TreinadorRepresentation.Lista> listaFinal =

@@ -60,13 +60,13 @@ public interface TreinadorRepresentation {
 
         private static Lista from(Treinador treinador) {
             //return treinador.getPokemonList().isEmpty() ?
-            Lista.builder()
+           return Lista.builder()
                     .id(treinador.getIdTreinador())
                     .nomeCompleto(
                             String.format("%s %s", treinador.getNomeTreinador(), treinador.getRgTreinador())
                     )
                     .build();
-            return null;
+
         }
 
         public static List<Lista> from(List<Treinador> treinadorList) {
