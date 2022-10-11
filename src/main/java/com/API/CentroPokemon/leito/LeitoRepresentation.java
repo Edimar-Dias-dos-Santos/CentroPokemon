@@ -20,8 +20,11 @@ public interface LeitoRepresentation {
     class CriarOuAtualizar {
 
         @NotNull(message = "O campo número não pode ser nulo")
+        private long numeroLeito;
+
+        @NotNull(message = "O campo tipo de leito não pode ser nulo")
         @NotEmpty
-        private String numeroLeito;
+        private String tipoLeito;
 
         public static Detalhes from(Leito leito) {
             return Detalhes.builder()

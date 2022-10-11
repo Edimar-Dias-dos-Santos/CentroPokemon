@@ -3,14 +3,18 @@ package com.API.CentroPokemon.leito;
 import com.API.CentroPokemon.exceptions.LeitoServiceException;
 import com.API.CentroPokemon.exceptions.NotFoundException;
 import com.querydsl.core.types.Predicate;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 import java.util.Optional;
 
-import static java.awt.Container.log;
-
+@Service
+@AllArgsConstructor
+@Slf4j
 public class LeitoService {
 
     private LeitoRepository leitoRepository;
@@ -21,9 +25,9 @@ public class LeitoService {
             log.error(criar.toString());
             throw new LeitoServiceException("O número não pode ser nulo");
         }
-        if(criar.getNumeroLeito().isEmpty()) {
+        if(criar.getNumeroLeito() <= 0) {
             log.error(criar.toString());
-            throw new LeitoServiceException("O número não pode ser vazio");
+            throw new LeitoServiceException("O número não pode ser zero");
         }
 
         return this.leitoRepository.save(Leito.builder()
