@@ -32,6 +32,8 @@ public class LeitoService {
 
         return this.leitoRepository.save(Leito.builder()
                 .numeroLeito(criar.getNumeroLeito())
+                .tipoLeito(criar.getTipoLeito())
+                .statusLeito(criar.getStatusLeito())
                 .build());
     }
 

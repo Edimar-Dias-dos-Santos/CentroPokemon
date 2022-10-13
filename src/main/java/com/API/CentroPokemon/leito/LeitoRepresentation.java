@@ -26,6 +26,8 @@ public interface LeitoRepresentation {
         @NotEmpty
         private String tipoLeito;
 
+        private StatusLeito statusLeito;
+
         public static Detalhes from(Leito leito) {
             return Detalhes.builder()
                     .id(leito.getIdLeito())
