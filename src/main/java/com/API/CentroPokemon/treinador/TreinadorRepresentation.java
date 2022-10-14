@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -19,11 +20,11 @@ public interface TreinadorRepresentation {
     class CriarOuAtualizar {
 
         @NotNull(message = "O campo nome não pode ser nulo")
-        @NotEmpty
+        @NotEmpty(message = "O campo nome não pode ser vazio")
         private String nomeTreinador;
 
         @NotNull(message = "O campo rg não pode ser nulo")
-        @NotEmpty
+        @NotEmpty(message = "O campo rg não pode ser vazio")
         private String rgTreinador;
 
         public static Detalhes from(Treinador treinador) {

@@ -22,23 +22,6 @@ public class TreinadorService {
 
     public Treinador criarTreinador(TreinadorRepresentation.CriarOuAtualizar criar) {
 
-        if(Objects.isNull(criar.getNomeTreinador())) {
-            log.error(criar.toString());
-            throw new TreinadorServiceException("O nome não pode ser nulo");
-        }
-        if(criar.getNomeTreinador().isEmpty()) {
-            log.error(criar.toString());
-            throw new TreinadorServiceException("O nome não pode ser vazio");
-        }
-
-        if(Objects.isNull(criar.getRgTreinador())) {
-            log.error(criar.toString());
-            throw new TreinadorServiceException("O rg não pode ser nulo");
-        }
-        if(criar.getRgTreinador().isEmpty()) {
-            log.error(criar.toString());
-            throw new TreinadorServiceException("O rg não pode ser vazio");
-        }
         return this.treinadorRepository.save(Treinador.builder()
                 .nomeTreinador(criar.getNomeTreinador())
                 .rgTreinador(criar.getRgTreinador())

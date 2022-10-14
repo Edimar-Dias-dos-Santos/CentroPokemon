@@ -9,8 +9,7 @@ public class TreinadorServiceException extends RuntimeException {
         super();
     }
 
-    public TreinadorServiceException(final String message) {
-        super(message);
+    public TreinadorServiceException(final String message) {super(message);
     }
     public TreinadorServiceException(final String message, final Throwable cause) {
         super(message, cause);
