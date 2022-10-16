@@ -29,10 +29,8 @@ public class TreinadorController {
         TreinadorRepresentation.Detalhes detalhes =
                 TreinadorRepresentation.Detalhes.from(treinador);
 
-        return ResponseEntity
-                .ok(detalhes);
+        return ResponseEntity.ok(detalhes);
     }
-
 
     @GetMapping("/")
     public ResponseEntity<List<TreinadorRepresentation.Lista>> buscarTreinadores(
