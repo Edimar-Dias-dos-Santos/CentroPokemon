@@ -27,11 +27,14 @@ public interface TreinadorRepresentation {
         @NotEmpty(message = "O campo rg não pode ser vazio")
         private String rgTreinador;
 
+        private StatusTreinador statusTreinador;
+
         public static Detalhes from(Treinador treinador) {
             return Detalhes.builder()
                     .id(treinador.getIdTreinador())
                     .nomeTreinador(treinador.getNomeTreinador())
                     .rgTreinador(treinador.getRgTreinador())
+                    .statusTreinador(treinador.getStatusTreinador())
                     .build();
         }
     }
@@ -42,12 +45,14 @@ public interface TreinadorRepresentation {
         private Long id;
         private String nomeTreinador;
         private String rgTreinador;
+        private StatusTreinador statusTreinador;
 
         public static Detalhes from(Treinador treinador) {
             return Detalhes.builder()
                     .id(treinador.getIdTreinador())
                     .nomeTreinador(treinador.getNomeTreinador())
                     .rgTreinador(treinador.getRgTreinador())
+                    .statusTreinador(treinador.getStatusTreinador())
                     .build();
         }
     }
@@ -59,6 +64,7 @@ public interface TreinadorRepresentation {
         private Long id;
         private String nomeTreinador;
         private String rgTreinador;
+        private StatusTreinador statusTreinador;
         //private String nomeCompleto;
 
         private static Lista from(Treinador treinador) {
@@ -67,6 +73,7 @@ public interface TreinadorRepresentation {
                     .id(treinador.getIdTreinador())
                     .nomeTreinador(treinador.getNomeTreinador())
                     .rgTreinador(treinador.getRgTreinador())
+                    .statusTreinador(treinador.getStatusTreinador())
 //                    .nomeCompleto(
 //                            String.format("%s %s", treinador.getNomeTreinador(), treinador.getRgTreinador())
 //                    )
