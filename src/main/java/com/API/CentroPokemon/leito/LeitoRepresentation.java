@@ -23,9 +23,10 @@ public interface LeitoRepresentation {
         private long numeroLeito;
 
         @NotNull(message = "O campo tipo de leito não pode ser nulo")
-        @NotEmpty
+        @NotEmpty(message = "O campo tipo de leito não pode ser vazio")
         private String tipoLeito;
 
+        @NotNull(message = "O campo status de leito não pode ser nulo")
         private StatusLeito statusLeito;
 
         public static Detalhes from(Leito leito) {
