@@ -29,7 +29,6 @@ public class TreinadorService {
                 .build());
     }
 
-
     public Page<Treinador> buscarTodos(Pageable pageable) {
         return this.treinadorRepository.findAll(pageable);
     }
@@ -55,13 +54,11 @@ public class TreinadorService {
 
     }
 
-
     public Treinador buscarUmTreinador(Long idTreinador) {
 
         return this.getTreinador(idTreinador);
 
     }
-
 
     private Treinador getTreinador(Long idTreinador) {
         Optional<Treinador> treinadorAtual =
@@ -73,7 +70,5 @@ public class TreinadorService {
             throw new NotFoundException("Treinador não encontrado");
         }
     }
-
-
 }
 

@@ -78,7 +78,6 @@ public interface TreinadorRepresentation {
 //                            String.format("%s %s", treinador.getNomeTreinador(), treinador.getRgTreinador())
 //                    )
                     .build();
-
         }
 
         public static List<Lista> from(List<Treinador> treinadorList) {

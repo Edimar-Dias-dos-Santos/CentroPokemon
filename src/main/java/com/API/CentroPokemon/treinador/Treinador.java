@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
@@ -21,7 +22,8 @@ public class Treinador {
     @Column(name = "nome_treinador")
     private String nomeTreinador;
 
-    @Column(name = "rg_treinador")
+    @Size(max = 7)
+    @Column(name = "rg_treinador", length= 7 )
     private String rgTreinador;
 
     @Column(name = "status_treinador")
