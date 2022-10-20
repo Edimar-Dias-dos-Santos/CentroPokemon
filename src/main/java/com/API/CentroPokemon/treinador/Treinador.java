@@ -1,5 +1,6 @@
 package com.API.CentroPokemon.treinador;
 
+import com.API.CentroPokemon.leito.StatusLeito;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +23,10 @@ public class Treinador {
 
     @Column(name = "rg_treinador")
     private String rgTreinador;
+
+    @Column(name = "status_treinador")
+    @Enumerated(value = EnumType.STRING)
+    private StatusTreinador statusTreinador;
 
     //@OneToMany(fetch = FetchType.LAZY, mappedBy = "treinador", orphanRemoval = true)
     //List<Pokemon> pokemonList = new ArrayList<>();

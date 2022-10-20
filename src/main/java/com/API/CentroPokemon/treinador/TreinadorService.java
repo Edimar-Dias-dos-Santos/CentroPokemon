@@ -25,6 +25,7 @@ public class TreinadorService {
         return this.treinadorRepository.save(Treinador.builder()
                 .nomeTreinador(criar.getNomeTreinador())
                 .rgTreinador(criar.getRgTreinador())
+                .statusTreinador(criar.getStatusTreinador())
                 .build());
     }
 
@@ -47,6 +48,7 @@ public class TreinadorService {
                 .idTreinador(idTreinador)
                 .nomeTreinador(atualizar.getNomeTreinador())
                 .rgTreinador(atualizar.getRgTreinador())
+                .statusTreinador(atualizar.getStatusTreinador())
                 .build();
 
         return this.treinadorRepository.save(treinadorParaAtualizar);

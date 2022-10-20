@@ -82,8 +82,6 @@ public class TreinadorController {
                 TreinadorRepresentation.Detalhes
                         .from(treinador);
 
-        return ResponseEntity
-                .ok(detalhes);
-
+        return ResponseEntity.ok(detalhes);
     }
 }
