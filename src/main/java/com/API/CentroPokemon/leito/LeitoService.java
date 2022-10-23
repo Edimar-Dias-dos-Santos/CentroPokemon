@@ -34,6 +34,7 @@ public class LeitoService {
                 .numeroLeito(criar.getNumeroLeito())
                 .tipoLeito(criar.getTipoLeito())
                 .statusLeito(criar.getStatusLeito())
+                .leitoAtivo(criar.getLeitoAtivo())
                 .build());
     }
 
@@ -57,6 +58,7 @@ public class LeitoService {
                 .numeroLeito(atualizar.getNumeroLeito())
                 .tipoLeito(atualizar.getTipoLeito())
                 .statusLeito(atualizar.getStatusLeito())
+                .leitoAtivo(atualizar.getLeitoAtivo())
                 .build();
 
         return this.leitoRepository.save(leitoParaAtualizar);

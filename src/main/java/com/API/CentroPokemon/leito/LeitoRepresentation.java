@@ -1,5 +1,6 @@
 package com.API.CentroPokemon.leito;
 
+import com.API.CentroPokemon.treinador.StatusTreinador;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,12 +30,15 @@ public interface LeitoRepresentation {
         @NotNull(message = "O campo status de leito não pode ser nulo")
         private StatusLeito statusLeito;
 
+        private LeitoAtivo leitoAtivo;
+
         public static Detalhes from(Leito leito) {
             return Detalhes.builder()
                     .id(leito.getIdLeito())
                     .numeroLeito(leito.getNumeroLeito())
                     .tipoLeito(leito.getTipoLeito())
                     .statusLeito(leito.getStatusLeito())
+                    .leitoAtivo(leito.getLeitoAtivo())
                     .build();
         }
     }
@@ -46,13 +50,15 @@ public interface LeitoRepresentation {
         private Long numeroLeito;
         private String tipoLeito;
         private StatusLeito statusLeito;
+        private LeitoAtivo leitoAtivo;
 
-        public static LeitoRepresentation.Detalhes from(Leito leito) {
+        public static Detalhes from(Leito leito) {
             return Detalhes.builder()
                     .id(leito.getIdLeito())
                     .numeroLeito(leito.getNumeroLeito())
                     .tipoLeito(leito.getTipoLeito())
                     .statusLeito(leito.getStatusLeito())
+                    .leitoAtivo(leito.getLeitoAtivo())
                     .build();
         }
     }
@@ -65,21 +71,23 @@ public interface LeitoRepresentation {
         private Long numeroLeito;
         private String tipoLeito;
         private StatusLeito statusLeito;
+        private LeitoAtivo leitoAtivo;
 
-        private static LeitoRepresentation.Lista from(Leito leito) {
+        private static Lista from(Leito leito) {
             return Lista.builder()
                     .id(leito.getIdLeito())
                     .numeroLeito(leito.getNumeroLeito())
                     .tipoLeito(leito.getTipoLeito())
                     .statusLeito(leito.getStatusLeito())
+                    .leitoAtivo(leito.getLeitoAtivo())
                     .build();
 
         }
 
-        public static List<LeitoRepresentation.Lista> from(List<Leito> leitoList) {
+        public static List<Lista> from(List<Leito> leitoList) {
             return leitoList
                     .stream()
-                    .map(LeitoRepresentation.Lista::from)
+                    .map(Lista::from)
                     .collect(Collectors.toList());
         }
     }
