@@ -27,6 +27,10 @@ public class Leito {
     @Enumerated(value = EnumType.STRING)
     private StatusLeito statusLeito;
 
+    @Column(name = "leito_ativo")
+    @Enumerated(value = EnumType.STRING)
+    private LeitoAtivo leitoAtivo;
+
     //id_leito OK
     //numero_leito OK
     //status_leito
