@@ -18,6 +18,7 @@ import java.util.List;
 @Builder
 @Entity(name = "treinador")
 public class Treinador {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idTreinador;
