@@ -55,7 +55,7 @@ public class PacienteService {
 
     }
 
-    public Paciente buscarUmTreinador(Long idPaciente) {
+    public Paciente buscarUmPaciente(Long idPaciente) {
 
         return this.getPaciente(idPaciente);
 
