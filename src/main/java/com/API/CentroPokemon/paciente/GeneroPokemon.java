@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum GeneroPokemon {
-    M("MASCULINo"),
+    M("MASCULINO"),
     F("FEMININO");
 
     private String descricao;
