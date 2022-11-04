@@ -45,7 +45,7 @@ public class AtendimentoService {
                 .dataSaida(atualizar.getDataSaida())
                 .tipoAtendimento(atualizar.getTipoAtendimento())
                 .custoAtendimento(atualizar.getCustoAtendimento())
-                .statusAtendimento(criar.getStatusAtendimento())
+                .statusAtendimento(atualizar.getStatusAtendimento())
                 .build();
 
         return this.atendimentoRepository.save(atendimentoParaAtualizar);
