@@ -17,8 +17,6 @@ import java.util.Optional;
 @AllArgsConstructor
 @Slf4j
 public class PacienteService {
-    private PacienteRepository pacienteRepository;
-
     public Paciente criarPaciente(PacienteRepresentation.CriarOuAtualizar criar) {
 
         return this.pacienteRepository.save(Paciente.builder()
@@ -28,6 +26,8 @@ public class PacienteService {
                 .dataNascimento(criar.getDataNascimento())
                 .build());
     }
+
+    private PacienteRepository pacienteRepository;
 
     public Page<Paciente> buscarTodos(Pageable pageable) {
         return this.pacienteRepository.findAll(pageable);
