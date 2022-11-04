@@ -4,6 +4,7 @@ import com.API.CentroPokemon.leito.Leito;
 import com.API.CentroPokemon.paciente.Paciente;
 import com.API.CentroPokemon.paciente.TipoPokemon;
 import com.API.CentroPokemon.prontuario.Prontuario;
+import com.API.CentroPokemon.treinador.StatusTreinador;
 import com.API.CentroPokemon.treinador.Treinador;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,10 @@ public class Atendimento {
 
     @Column(name = "custo_atendimento")
     private Number custoAtendimento;
+
+    @Column(name = "status_atendimento")
+    @Enumerated(value = EnumType.STRING)
+    private StatusTreinador statusAtendimento;
 
     @ManyToOne
     private Leito leito;

@@ -21,6 +21,7 @@ import java.util.Objects;
 @CrossOrigin("*")
 @AllArgsConstructor
 public class AtendimentoController {
+
     private AtendimentoService AtendimentoService;
 
     @PostMapping("/")
