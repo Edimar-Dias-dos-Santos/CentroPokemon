@@ -39,7 +39,7 @@ public class Atendimento {
 
     @Column(name = "status_atendimento")
     @Enumerated(value = EnumType.STRING)
-    private StatusTreinador statusAtendimento;
+    private StatusAtendimento statusAtendimento;
 
     @ManyToOne
     private Leito leito;

@@ -1,8 +1,5 @@
 package com.API.CentroPokemon.atendimento;
 
-import com.API.CentroPokemon.paciente.Paciente;
-import com.API.CentroPokemon.paciente.PacienteRepresentation;
-import com.API.CentroPokemon.paciente.PacienteService;
 import com.querydsl.core.types.Predicate;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -22,7 +19,7 @@ import java.util.Objects;
 @AllArgsConstructor
 public class AtendimentoController {
 
-    private AtendimentoService AtendimentoService;
+    private AtendimentoService atendimentoService;
 
     @PostMapping("/")
     public ResponseEntity<AtendimentoRepresentation.Detalhes> createAtendimento(
