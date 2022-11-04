@@ -1,9 +1,5 @@
 package com.API.CentroPokemon.atendimento;
 
-import com.API.CentroPokemon.paciente.GeneroPokemon;
-import com.API.CentroPokemon.paciente.Paciente;
-import com.API.CentroPokemon.paciente.PacienteRepresentation;
-import com.API.CentroPokemon.paciente.TipoPokemon;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,6 +36,8 @@ public interface AtendimentoRepresentation {
         @NotEmpty(message = "O campo custo não pode ser vazio")
         private Number custoAtendimento;
 
+        private StatusAtendimento statusAtendimento;
+
         public static Detalhes from(Atendimento atendimento) {
             return Detalhes.builder()
                     .idAtendimento(atendimento.getIdAtendimento())
@@ -47,6 +45,7 @@ public interface AtendimentoRepresentation {
                     .dataSaida(atendimento.getDataSaida())
                     .tipoAtendimento(atendimento.getTipoAtendimento())
                     .custoAtendimento(atendimento.getCustoAtendimento())
+                    .statusAtendimento(atendimento.getStatusAtendimento())
                     .build();
         }
     }
@@ -59,6 +58,7 @@ public interface AtendimentoRepresentation {
         private Date dataSaida;
         private TipoAtendimento tipoAtendimento;
         private Number custoAtendimento;
+        private StatusAtendimento statusAtendimento;
 
         public static Detalhes from(Atendimento atendimento) {
             return Detalhes.builder()
@@ -67,6 +67,7 @@ public interface AtendimentoRepresentation {
                     .dataSaida(atendimento.getDataSaida())
                     .tipoAtendimento(atendimento.getTipoAtendimento())
                     .custoAtendimento(atendimento.getCustoAtendimento())
+                    .statusAtendimento(atendimento.getStatusAtendimento())
                     .build();
         }
     }
@@ -80,6 +81,7 @@ public interface AtendimentoRepresentation {
         private Date dataSaida;
         private TipoAtendimento tipoAtendimento;
         private Number custoAtendimento;
+        private StatusAtendimento statusAtendimento;
 
         private static Lista from(Atendimento atendimento) {
             return Lista.builder()
@@ -88,6 +90,7 @@ public interface AtendimentoRepresentation {
                     .dataSaida(atendimento.getDataSaida())
                     .tipoAtendimento(atendimento.getTipoAtendimento())
                     .custoAtendimento(atendimento.getCustoAtendimento())
+                    .statusAtendimento(atendimento.getStatusAtendimento())
                     .build();
         }
 

@@ -65,18 +65,14 @@ public interface TreinadorRepresentation {
         private String nomeTreinador;
         private String rgTreinador;
         private StatusTreinador statusTreinador;
-        //private String nomeCompleto;
 
         private static Lista from(Treinador treinador) {
-            //return treinador.getPokemonList().isEmpty() ?
+
            return Lista.builder()
                     .id(treinador.getIdTreinador())
                     .nomeTreinador(treinador.getNomeTreinador())
                     .rgTreinador(treinador.getRgTreinador())
                     .statusTreinador(treinador.getStatusTreinador())
-//                    .nomeCompleto(
-//                            String.format("%s %s", treinador.getNomeTreinador(), treinador.getRgTreinador())
-//                    )
                     .build();
         }
 

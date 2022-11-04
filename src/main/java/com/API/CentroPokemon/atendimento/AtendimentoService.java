@@ -13,6 +13,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Slf4j
 public class AtendimentoService {
+    private AtendimentoRepository atendimentoRepository;
     public Atendimento criarAtendimento(AtendimentoRepresentation.CriarOuAtualizar criar) {
 
         return this.atendimentoRepository.save(Atendimento.builder()
@@ -20,10 +21,9 @@ public class AtendimentoService {
                 .dataSaida(criar.getDataSaida())
                 .tipoAtendimento(criar.getTipoAtendimento())
                 .custoAtendimento(criar.getCustoAtendimento())
+                .statusAtendimento(criar.getStatusAtendimento())
                 .build());
     }
-
-    private AtendimentoRepository atendimentoRepository;
 
     public Page<Atendimento> buscarTodos(Pageable pageable) {
         return this.atendimentoRepository.findAll(pageable);
@@ -45,6 +45,7 @@ public class AtendimentoService {
                 .dataSaida(atualizar.getDataSaida())
                 .tipoAtendimento(atualizar.getTipoAtendimento())
                 .custoAtendimento(atualizar.getCustoAtendimento())
+                .statusAtendimento(criar.getStatusAtendimento())
                 .build();
 
         return this.atendimentoRepository.save(atendimentoParaAtualizar);
@@ -67,8 +68,5 @@ public class AtendimentoService {
             throw new NotFoundException("Atendimento não encontrado");
         }
     }
-
-
-
 
 }
